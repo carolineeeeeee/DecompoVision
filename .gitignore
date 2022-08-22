@@ -2,3 +2,4 @@
 .netlify
 
 doc/_build
+__pycache__

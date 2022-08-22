@@ -14,6 +14,8 @@ Welcome to Object Detection's documentation!
    source/build-doc
    object_detection
 
+   source/docstring/modules
+
 Indices and tables
 ==================
 
