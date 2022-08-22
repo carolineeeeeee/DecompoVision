@@ -2,4 +2,4 @@
 
 Welcome!
 
-Please see the project documentation here: 
+Please see the project documentation here: https://reliability-object-detection.netlify.app
