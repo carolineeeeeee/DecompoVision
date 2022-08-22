@@ -80,7 +80,7 @@ jobs:
         id: build-and-push
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: ./object_detection      # Dockerfile in top level directory
+          context: .      # Dockerfile in top level directory
           platforms: linux/amd64
           # platforms: linux/arm64/v8,linux/arm/v6,linux/arm/v7,linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
