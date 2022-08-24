@@ -1,0 +1,11 @@
+cloudpickle==2.0.0
+fvcore==0.1.5.post20220512
+tqdm==4.62.3
+omegaconf==2.2.2
+pathlib2==2.3.7.post1
+scikit-image==0.19.3
+magickwand==0.2
+Wand==0.6.9
+sewar==0.4.5
+albumentations==1.2.1
+opencv-python==4.5.5.64
