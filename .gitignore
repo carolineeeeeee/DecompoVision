@@ -1,0 +1,5 @@
+# Local Netlify folder
+.netlify
+
+doc/_build
+__pycache__
