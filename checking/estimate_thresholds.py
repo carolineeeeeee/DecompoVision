@@ -11,18 +11,20 @@ from torchmetrics import JaccardIndex
 import torch
 from src.constant import *
 
-NUM_PARTICIPANTS = 5
 CLS = 'person'
 TRANSFORMATION = 'frost'
+
+
+NUM_PARTICIPANTS = 5
 IQA_interval = 0.1
 
-Mturk_results_file = '../experiment/experiment_results/500_C|L.csv'
+Mturk_results_file = '../experiment/experiment_results/'+TRANSFORMATION+'/500_C|L.csv'
 human_performance = pd.read_csv(Mturk_results_file)
-image_IQA_file = '../experiment/experiment_results/images_transformations_info_500.csv'
+image_IQA_file = '../experiment/experiment_results/'+TRANSFORMATION+'/images_transformations_info_500.csv'
 image_IQA = pd.read_csv(image_IQA_file)
-localization_results_file = '../experiment/experiment_results/500_L.csv'
+localization_results_file = '../experiment/experiment_results/'+TRANSFORMATION+'/500_L.csv'
 localization_results = pd.read_csv(localization_results_file)
-segmentation_results_file = '../experiment/experiment_resultsp/500_S.csv'
+segmentation_results_file = '../experiment/experiment_results/'+TRANSFORMATION+'/500_S.csv'
 segmentation_results = pd.read_csv(segmentation_results_file)
 
 # build image name to scale dict
@@ -640,6 +642,11 @@ if __name__ == '__main__':
                     else:
                         prec_and_rec.append(1-IQA_interval)
                 if len(prec_and_rec) > 0:
-                    print(min(prec_and_rec))
+                    print('Automatically selected threshold; ' + str(min(prec_and_rec)) + ', might need calibration.')
+                    print('Check p values for each IQA interval:')
+                    print('IQA: p-value')
+                    for iqa in range(len(IQAs)):
+                        print(str(IQAs[iqa]) + ': ' + str(p_values[iqa]))
+                    
 
     

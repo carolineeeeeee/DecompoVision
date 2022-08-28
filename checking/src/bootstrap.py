@@ -1,20 +1,15 @@
-from cv2 import log
 import pandas as pd
-from abc import ABC, abstractmethod
-import torchvision
+from abc import ABC
 from tqdm import tqdm
 from typing import Union
 from .utils import clear_dir, get_image_based_on_transformation
 from .Imagenet_c_transformations import *
-from torch.utils.data import DataLoader
-from .constant import GAUSSIAN_NOISE, DEFOCUS_BLUR, FROST, BRIGHTNESS, CONTRAST, JPEG_COMPRESSION, \
-    TRANSFORMATION_LEVEL, ROOT, BOOTSTRAP_DIR
-from src.dataset import CocoDatasetInfo, DatasetInfo, PascalVOCDatasetInfo, CustomPascalVOCDataset
+from .constant import *
+from src.dataset import DatasetInfo
 from PIL.ImageFile import ImageFile
 from typing import Tuple
 import torch
 import random
-from torchvision.transforms import ToTensor
 import psutil
 import gc
 from pathlib2 import Path
@@ -181,12 +176,12 @@ def bootstrap(images_info_df: pd.DataFrame, num_sample_iter: int, sample_size: i
                     im = Image.fromarray(img2.astype('uint8'))
                     im.save(str(output_path))
                     annotation_filename = cur_row['id'] + ".xml"
-                    orig_anno_file =  Path('/w/10/users/boyue/VOCdevkit/VOC2012/Annotations/'+annotation_filename)
+                    orig_anno_file =  Path(str(VOC_ROOT) +'/VOC2012/Annotations/'+annotation_filename)
                     os.symlink(orig_anno_file, annotations_dir / annotation_filename)
 
                     seg_filename = cur_row['id'] + ".png"
-                    orig_seg_class_file =  Path('/w/10/users/boyue/VOCdevkit/VOC2012/SegmentationClass/'+seg_filename)
-                    orig_seg_obj_file =  Path('/w/10/users/boyue/VOCdevkit/VOC2012/SegmentationObject/'+seg_filename)
+                    orig_seg_class_file =  Path(str(VOC_ROOT) +'/VOC2012/SegmentationClass/'+seg_filename)
+                    orig_seg_obj_file =  Path(str(VOC_ROOT) +'/VOC2012/SegmentationObject/'+seg_filename)
                     os.symlink(orig_seg_class_file, seg_class_dir / seg_filename)
                     os.symlink(orig_seg_obj_file, seg_obj_dir / seg_filename)
                     break

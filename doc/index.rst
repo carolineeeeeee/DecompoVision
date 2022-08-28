@@ -6,15 +6,19 @@
 Welcome to Object Detection's documentation!
 ============================================
 
+Example? intro of what this contains?
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
+   source/proofs
    source/mturk
-   source/build-doc
-   object_detection
-
-   source/docstring/modules
+   source/estimate
+   source/requirements
+   source/envsetup
+   source/evaluation
 
 Indices and tables
 ==================

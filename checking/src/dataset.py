@@ -1,7 +1,4 @@
-import io
-import json
 import pandas as pd
-from typing import List, Dict
 from abc import ABC, abstractmethod
 from torch.utils.data import Dataset
 from torchvision.datasets import VOCDetection
@@ -9,6 +6,7 @@ from typing import Any, Tuple, Optional, Callable
 from pathlib2 import Path
 import xml.etree.ElementTree as ET
 import os
+from src.constant import *
 
 class DatasetInfo(ABC):
     def __init__(self):
@@ -32,13 +30,12 @@ class DatasetInfo(ABC):
 class PascalVOCDatasetInfo(DatasetInfo):
     def __init__(self, root: Path, image_set: str = "val"):
         super(PascalVOCDatasetInfo, self).__init__()
-        self.root = Path(root)
-        self.image_root = self.root / "VOCdevkit" / "VOC2012" / "JPEGImages"
-        self.annotation_root = self.root /  "VOCdevkit" / "VOC2012" / "Annotations"
+        self.image_root = VOC_ROOT / "VOC2012" / "JPEGImages"
+        self.annotation_root = VOC_ROOT / "VOC2012" / "Annotations"
         self.image_set = image_set
         assert self.image_set in ["seg", "train", "val", "trainval"]
-        self.image_list_file = self.root /"VOCdevkit" / "VOC2012" / "ImageSets" / "Main" / f"{self.image_set}.txt"
-        seg_gt_path = str(self.root /"VOCdevkit" / "VOC2012" / "SegmentationClass")
+        self.image_list_file = VOC_ROOT / "VOC2012" / "ImageSets" / "Main" / f"{self.image_set}.txt"
+        seg_gt_path = str(VOC_ROOT/ "VOC2012" / "SegmentationClass")
         with open(str(self.image_list_file), "r") as f:
             self.image_ids = [line.strip() for line in f.readlines()]
         self.image_filenames = [f"{id_}.jpg" for id_ in self.image_ids if os.path.exists(seg_gt_path + '/' + id_ + '.png')]

@@ -3,7 +3,9 @@
 ## Setup
 Recommended python version: Python 3.10.4
 
-1. Download PASCAL VOC data set from here: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit. Under **Development Kit** click on *training/validation data*.
+1. First clone the github repository from here: TODO link
+
+2. Download PASCAL VOC data set from here: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit. Under **Development Kit** click on *training/validation data*.
    
 The downloaded PASCAL VOC dataset, once unzip, should have the following structure
 ```

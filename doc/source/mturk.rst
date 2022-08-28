@@ -2,26 +2,21 @@
 Mturk Experiment
 ****************
 
-Table of Contents
-=================
-
-1. :ref:`Introduction`
-2. :ref:`Classification`
-3. :ref:`Draw Bounding Box`
-
-
 Introduction
 ============
 
+Here we provide details about our experiment with human participants to measure performance on object detection and instance segmentation.
 
+Implementations of these experiments can be found on our Github repository: TODO link
+
+
+How It Works
+------------
 The mturk experiments are built with vue + vite.
 
 Mturk only allows user to upload a single html file. You could write everything into a single html file using vanilla javascript, but this quickly gets super complicated.
 
 The file gets too long and hard to maintain. We then developed an easy way to build complex experiments with Vue (or any other modern single page application framework).
-
-How It Works
-------------
 
 
 `npm run build` generates a `dist` folder containing a `index.html` and this is the file you want to copy to Mturk.
@@ -53,8 +48,27 @@ Simply run `make`, and everything will be done for you.
 
 If you were to build your own project, don't forget to change the urls in `patch-s3.sh` and `Makefile`.
 
-Classification
-==============
+
+Video Demonstration
+===================
+
+
+Localization
+-------------
+
+.. raw:: html
+
+    <video width="600" controls controlsList="nodownload">
+    <source
+        src="https://mturk-host.s3.us-east-2.amazonaws.com/instructions/detection/detection-video-demo.mp4"
+        type="video/mp4"
+    />
+    Your browser does not support the video tag.
+    </video>
+
+
+Classification given Localization
+----------------------------------
 
 
 .. raw:: html
@@ -67,17 +81,14 @@ Classification
     Your browser does not support the video tag.
     </video>
 
+Segmentation given Localization and Classification
+---------------------------------------------------
+For this one, we use the Mturk template for instance segmentation, but provide the participants bounding boxes and class label of the object.
+
+TODO: add video
 
 
-Draw Bounding Box
-=================
-
-.. raw:: html
-
-    <video width="600" controls controlsList="nodownload">
-    <source
-        src="https://mturk-host.s3.us-east-2.amazonaws.com/instructions/detection/detection-video-demo.mp4"
-        type="video/mp4"
-    />
-    Your browser does not support the video tag.
-    </video>
+Results
+========
+We conducted object detection and instance segmentation experiments on Mechanical Turk for two transformations frost and brightness. 
+Results can be found in our github repository: TODO link

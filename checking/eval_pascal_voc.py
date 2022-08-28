@@ -2,8 +2,6 @@ import base64
 import io
 import yaml
 import argparse
-import pathlib2
-from pathlib2 import Path
 import os
 from tools.train_net import setup, Trainer, DetectionCheckpointer
 from detectron2.evaluation.evaluator import inference_context, ExitStack
@@ -399,7 +397,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--transformation", required=True)#, choices=TRANSFORMATIONS)
-    parser.add_argument("-r", "--read_only", type=bool, required=False)#, choices=TRANSFORMATIONS)
+    parser.add_argument("-r", "--read_only", type=bool, required=False)
     parser.add_argument("-v", "--vision_task", required=True, choices=['D', 'I'])
     parser.add_argument("-th", "--threshold", required=True)
     
