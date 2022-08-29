@@ -5,7 +5,7 @@ import pathlib2
 ROOT = pathlib2.Path(__file__).parent.parent.absolute()
 DATA_DIR = ROOT / 'data'
 BOOTSTRAP_DIR = DATA_DIR / 'bootstrap'
-VOC_ROOT =  pathlib2.Path('/Users/caroline/Desktop/REforML/projects/Detection/VOCdevkit/')
+VOC_ROOT =  pathlib2.Path('VOCdevkit/')
 
 # transformations
 GAUSSIAN_NOISE = "gaussian_noise"
