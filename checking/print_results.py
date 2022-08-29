@@ -9,6 +9,7 @@ req_type = ['cp', 'pp']
 objects = ['person', 'bus', 'bird']
 
 name_dict = {'L': 'l', 'C|L': 'cl', 'D': 'd', 'S|C,L': 'scl', 'I': 's'}
+pickle_dir = 'metric_results'
 
 for t in transformations:
     for obj in objects:
@@ -36,10 +37,10 @@ for t in transformations:
                         for th in thlds:
                             filename = vt + '_' + obj + '_' +t + '_'+ str(th) + '_bootstrap.pickle'
                             #print(filename)
-                            if not os.path.exists('results/'+filename):
+                            if not os.path.exists(pickle_dir + '/'+filename):
                                 continue
                             #print(filename)
-                            with open('results/'+filename, 'rb') as f:
+                            with open(pickle_dir + '/'+filename, 'rb') as f:
                                 results = pickle.load(f)
                             name_to_check = req + '_' + name_dict[v]+'_results'
                             

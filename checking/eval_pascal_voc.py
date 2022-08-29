@@ -503,6 +503,10 @@ if __name__ == "__main__":
             os.mkdir('results_csv/bootstrap-'+MVC_output_path + '/model_' + str(model_index))
         csv_path = 'results_csv/bootstrap-'+MVC_output_path + '/model_' + str(model_index) + '/'
 
+        pickle_dir = 'metric_results'
+        if not os.path.exists(pickle_dir):
+            os.mkdir(pickle_dir)
+
         # run all original images
         new_dataset_name = f"my_voc_orig"+ '_' + str(model_index)
         voc_root = str(VOC_ROOT) + 'VOC2012/'
@@ -594,7 +598,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(o_rec_l, o_prec_l, t_rec_l, t_prec_l, cd_equals_c_t, npos_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['cp_l_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                     pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -608,7 +612,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(o_rec_cl, o_prec_cl, t_rec_cl, t_prec_cl, t_tp_precision, npos_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['cp_cl_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -623,13 +627,13 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(o_rec_d, o_prec_d, t_rec_d, t_prec_d, cd_equals_c_t, npos_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['cp_d_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
                         mAP_o = voc_ap(o_rec_d, o_prec_d)
                         mAP_t = voc_ap(t_rec_d, t_prec_d)
                         all_final[model_index][i]['cp_d_mAP'].append((cls, mAP_o, mAP_t))
-                        with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                        with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                             pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -643,7 +647,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(o_rec_scl, o_prec_scl, t_rec_scl, t_prec_scl, t_p, npos_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['cp_scl_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -658,7 +662,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(o_rec_s, o_prec_s, t_rec_s, t_prec_s, cd_equals_c_t, npos_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['cp_s_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -668,7 +672,7 @@ if __name__ == "__main__":
                     mAP_t = voc_ap(t_rec_s, t_prec_s)
 
                     all_final[model_index][i]['cp_s_mAP'].append((cls, mAP_o, mAP_t))
-                    with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                    with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                         pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
                 
@@ -683,7 +687,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(s_rec_l, s_prec_l, t_rec_l, t_prec_l, cd_equals_c_t, npos_orig_as_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['pp_l_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -700,7 +704,7 @@ if __name__ == "__main__":
                         
                         if conf_ninety_five:
                             all_final[model_index][i]['pp_cl_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -716,7 +720,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(s_rec_d, s_prec_d, t_rec_d, t_prec_d, cd_equals_c_t, npos_orig_as_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['pp_d_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -724,7 +728,7 @@ if __name__ == "__main__":
                     mAP_s = voc_ap(s_rec_d, s_prec_d)
                     mAP_t = voc_ap(t_rec_d, t_prec_d)
                     all_final[model_index][i]['pp_d_mAP'].append((cls, mAP_s, mAP_t))
-                    with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                    with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                         pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
                 if args.vision_task == 'I' and run[cls]['pp_S|C,L']:
@@ -735,7 +739,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(s_rec_scl, s_prec_scl, t_rec_scl, t_prec_scl, t_p, npos_orig_as_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['pp_scl_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) +  '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) +  '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -752,7 +756,7 @@ if __name__ == "__main__":
                         conf_ninety_five, num_points = estimate_curve_diff(s_rec_s, s_prec_s, t_rec_s, t_prec_s, cd_equals_c_t, npos_orig_as_gt[cls])
                         if conf_ninety_five:
                             all_final[model_index][i]['pp_s_results'].append((cls, conf_ninety_five, num_points))
-                            with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                            with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                                 pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     except:
                         pass
@@ -760,5 +764,5 @@ if __name__ == "__main__":
                     mAP_s = voc_ap(s_rec_s, s_prec_s)
                     mAP_t = voc_ap(t_rec_s, t_prec_s)
                     all_final[model_index][i]['pp_s_mAP'].append((cls, mAP_s, mAP_t))
-                    with open(args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
+                    with open(pickle_dir + '/' + args.vision_task + '_' + cls+'_'+args.transformation + '_' + str(args.threshold) + '_bootstrap.pickle', 'wb') as handle:
                         pickle.dump(all_final, handle, protocol=pickle.HIGHEST_PROTOCOL)
