@@ -17,9 +17,14 @@ VOCdevkit
     └── SegmentationObject
 
 ```
-Then, update the path to the directory `VOCdevkit` of the PASCAL VOC dataset as `VOC_ROOT` in `checking/src/constant.py`.
+
+Place the dataset folder `VOCdevkit` under `checking` folder.
 
 2. Download model weights from here: https://drive.google.com/drive/u/2/folders/1X5adPQ0d5V38rgcjGXUy4QrrVOUZHpkR and put them in a folder called `model_weights` under `checking`.
+
+3. Move `checking/seg.txt` to `VOCdevkit/VOC2012/ImageSets/Main/seg.txt`
+
+i.e. `cp seg.txt VOCdevkit/VOC2012/ImageSets/Main/seg.txt`
 
 ## Dependencies: detectron2
 [detectron2 by facebookresearch](https://github.com/facebookresearch/detectron2) is imported as a submodule under `checking`.
