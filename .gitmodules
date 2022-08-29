@@ -1,0 +1,3 @@
+[submodule "checking/detectron2"]
+	path = checking/detectron2
+	url = https://github.com/carolineeeeeee/detectron2.git

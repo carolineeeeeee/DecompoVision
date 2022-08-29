@@ -5,4 +5,5 @@ RUN apt-get update && \
 COPY requirements.Dockerfile.txt requirements.Dockerfile.txt
 RUN pip install -r requirements.Dockerfile.txt && rm requirements.Dockerfile.txt
 
-# docker build . -t huakunshen/reliability-object-detection:latest
+# docker build . -t anonymoresearcher/reliability-object-detection:latest
+# docker run -it --rm --gpus all anonymoresearcher/reliability-object-detection:latest
