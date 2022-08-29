@@ -14,14 +14,14 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     torch.multiprocessing.set_sharing_strategy('file_system')
-    bootstrap_path = BOOTSTRAP_DIR / 'data' / f'bootstrap-{args.transformation}-{str(args.threshold)}'
+    bootstrap_path = BOOTSTRAP_DIR / f'bootstrap-{args.transformation}_{str(args.threshold)}'
     image_set = "val"
     bootstrap_path.mkdir(parents=True, exist_ok=True)
 
     dataset_info = PascalVOCDatasetInfo(BOOTSTRAP_DIR, image_set=image_set)
     image_info_df = dataset_info.image_info_df()
-    bootstrap_df = bootstrap.bootstrap(image_info_df, 5, 1, args.transformation, float(args.threshold), bootstrap_path)
+    bootstrap_df = bootstrap.bootstrap(image_info_df, 5, 5, args.transformation, float(args.threshold), bootstrap_path)
     
     if not os.path.exists('bootstrap_dfs'):
         os.mkdir('bootstrap_dfs')
-    bootstrap_df.to_csv(f"bootstrap_dfs/bootstrap_df-{args.transformation}-{str(args.threshold)}.csv")
+    bootstrap_df.to_csv(f"bootstrap_dfs/bootstrap_df-{args.transformation}_{str(args.threshold)}.csv")

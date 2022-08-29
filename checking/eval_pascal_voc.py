@@ -47,7 +47,7 @@ def process(inputs, outputs, results_file_name):
         conf_scores = instances._fields["scores"].cpu()
         pred_classes = instances._fields["pred_classes"].cpu() 
         
-        if "pred_masks" in instances._fields and seg_results_path:
+        if "pred_masks" in instances._fields:
             pred_masks = instances._fields["pred_masks"].cpu()
         for j in range(boxes.shape[0]):         
             cur_box = boxes[j]
@@ -397,7 +397,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     parser.add_argument("-t", "--transformation", required=True)#, choices=TRANSFORMATIONS)
-    parser.add_argument("-r", "--read_only", type=bool, required=False)
+    parser.add_argument("-r", "--read_only", action='store_true')
     parser.add_argument("-v", "--vision_task", required=True, choices=['D', 'I'])
     parser.add_argument("-th", "--threshold", required=True)
     
@@ -509,7 +509,7 @@ if __name__ == "__main__":
 
         # run all original images
         new_dataset_name = f"my_voc_orig"+ '_' + str(model_index)
-        voc_root = str(VOC_ROOT) + 'VOC2012/'
+        voc_root = str(VOC_ROOT / 'VOC2012')
 
         update_yaml_dataset_name(args.config_file, new_dataset_name)
         register_pascal_voc(new_dataset_name, dirname=voc_root, split="seg", year=2007)
