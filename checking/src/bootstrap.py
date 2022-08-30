@@ -157,6 +157,7 @@ def bootstrap(images_info_df: pd.DataFrame, num_sample_iter: int, sample_size: i
                     for index, cur_row in new_row.iterrows():    
                         image_path = cur_row['path']
                         img = get_image_based_on_transformation(transformation_type, image_path)
+                    continue
 
                 gc.collect()
 

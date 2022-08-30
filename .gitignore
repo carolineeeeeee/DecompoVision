@@ -3,3 +3,10 @@
 
 doc/_build
 __pycache__
+checking/bootstrap_dfs/
+checking/data/bootstrap
+checking/results_csv
+checking/temp.png
+checking/model_weights
+checking/output
+checking/VOCdevkit

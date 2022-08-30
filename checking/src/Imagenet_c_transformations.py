@@ -90,7 +90,7 @@ def frost(x, i):
     
     idx = np.random.randint(5)
     filename = ['frost1.png', 'frost2.png', 'frost3.png', 'frost4.jpeg', 'frost5.jpeg', 'frost6.jpeg'][idx]
-    frost = Image.open(os.path.join(DATA_DIR, 'frost-images', filename))
+    frost = Image.open(os.path.join(ROOT, 'frost-images', filename))
 
     # print(frost)
     x = np.asarray(x)

@@ -4,5 +4,10 @@ RUN apt-get update && \
 	apt-get install -y libmagickwand-dev ffmpeg libsm6 libxext6
 COPY requirements.Dockerfile.txt requirements.Dockerfile.txt
 RUN pip install -r requirements.Dockerfile.txt && rm requirements.Dockerfile.txt
+WORKDIR /checking
+COPY ./checking .
+RUN cd detectron2 && python setup.py develop 
 
-# docker build . -t huakunshen/reliability-object-detection:latest
+# docker build . -t anonymoresearcher/reliability-object-detection:latest
+
+# docker run -it --rm --gpus all -v $HOME/datasets/:/root/datasets anonymoresearcher/reliability-object-detection:latest
