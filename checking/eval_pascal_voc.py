@@ -509,7 +509,7 @@ if __name__ == "__main__":
 
         # run all original images
         new_dataset_name = f"my_voc_orig"+ '_' + str(model_index)
-        voc_root = str(VOC_ROOT) + 'VOC2012/'
+        voc_root = str(VOC_ROOT) + '/VOC2012/'
 
         update_yaml_dataset_name(args.config_file, new_dataset_name)
         register_pascal_voc(new_dataset_name, dirname=voc_root, split="seg", year=2007)

@@ -15,7 +15,7 @@ Example? intro of what this contains?
 
    source/proofs
    source/mturk
-   source/estimate
+   source/requirements
    source/envsetup
    source/evaluation
 

@@ -5,7 +5,7 @@ Recommended python version: Python 3.10.4
 
 1. First clone the github repository from here: TODO link
 
-2. Download PASCAL VOC data set from here: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit. Under **Development Kit** click on *training/validation data*.
+2. Download PASCAL VOC data set from here: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit. Under **Development Kit** click on *training/validation data*. 
    
 The downloaded PASCAL VOC dataset, once unzip, should have the following structure
 ```
@@ -115,3 +115,7 @@ First make `run_all.sh` executable by running `chmod 777 run_all.sh`, then run `
 
 After `run_all.sh` finishes, use `print_results.py` to print the reliability distances generated. 
 
+## Using Docker
+See here for system requirements to run the docker: https://docs.docker.com/desktop/install/linux-install/#system-requirements
+
+You need to have a nvidia GPU
