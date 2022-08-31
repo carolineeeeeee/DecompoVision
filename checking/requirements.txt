@@ -62,3 +62,4 @@ Wand==0.6.10
 yacs==0.1.8
 zipp==3.8.1
 torchmetrics==0.9.3
+psutil==5.9.1
