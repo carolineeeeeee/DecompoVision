@@ -14,5 +14,5 @@ Although not shown in the paper, we also conducted experiments with the transfor
 
 Estimated Thresholds for brightness
 -----------------------------------
-.. image:: images/brightess_thresholds.png
+.. image:: images/brightness_thresholds.png
   :alt: thresholds estimated for brightness
