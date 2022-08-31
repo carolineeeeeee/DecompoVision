@@ -514,7 +514,7 @@ if __name__ == "__main__":
         update_yaml_dataset_name(args.config_file, new_dataset_name)
         register_pascal_voc(new_dataset_name, dirname=voc_root, split="seg", year=2007)
         orig_final_output_df_csv_filename = csv_path+ '/all_orig.csv'   
-        if not args.read_only:     
+        if not args.read_only:
             run_eval(args, new_dataset_name, orig_final_output_df_csv_filename)
         
         cp_transf_all = []

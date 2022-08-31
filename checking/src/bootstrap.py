@@ -29,6 +29,7 @@ logger.addHandler(stdout_handler)
 
 color_jitter_range = np.linspace(-0.5, 0.5, 1000)
 
+
 class Bootstrapper(ABC):
     def __init__(self, num_sample_iter: int, sample_size: int, source: Union[str, pathlib2.Path],
                  destination: Union[str, pathlib2.Path], dataset_info: DatasetInfo, transformation_type: str,
@@ -59,7 +60,7 @@ def bootstrap_transform(original_image: Union[ImageFile, np.ndarray], transforma
     elif transformation == DEFOCUS_BLUR:
         param_index = random.choice(range(TRANSFORMATION_LEVEL))
         img2, param = defocus_blur(original_image, param_index)
-    #elif transformation == FROST:
+    # elif transformation == FROST:
     elif FROST in transformation:
         param_index = random.choice(range(TRANSFORMATION_LEVEL))
         img2, _ = frost(original_image, param_index)
@@ -113,6 +114,7 @@ def bootstrap(images_info_df: pd.DataFrame, num_sample_iter: int, sample_size: i
     :return: bootstrap info dataframe
     :rtype: pd.DataFrame
     """
+    
     logger.info("Run Bootstrap")
     clear_dir(bootstrap_path)
 
@@ -134,29 +136,34 @@ def bootstrap(images_info_df: pd.DataFrame, num_sample_iter: int, sample_size: i
         seg_obj_dir.mkdir(parents=True, exist_ok=True)
         images_dir.mkdir(parents=True, exist_ok=True)
 
-
         within_iter_count = 1
         image_ids_selected = set()
         for index, cur_row in sample_df.iterrows():
             if cur_row['id'] in image_ids_selected:
                 continue
             image_path = cur_row['path']
-            img = get_image_based_on_transformation(transformation_type, image_path)
+            img = get_image_based_on_transformation(
+                transformation_type, image_path)
             c = 0
             while True:
                 try:
                     c += 1
-                    img2, param_index = bootstrap_transform(img, transformation_type)
+                    img2, param_index = bootstrap_transform(
+                        img, transformation_type)
                     # try to transform image and test IQA
-                    img_g = cv2.cvtColor(np.float32(img), cv2.COLOR_BGR2GRAY) if len(img2.shape) == 3 else img
-                    img2_g = cv2.cvtColor(np.float32(img2), cv2.COLOR_BGR2GRAY) if len(img2.shape) == 3 else img2
-                    IQA_score = vifp(np.asarray(img_g).astype('uint8'), np.asarray(img2_g).astype('uint8'),  sigma_nsq=0.4)
+                    img_g = cv2.cvtColor(np.float32(img), cv2.COLOR_BGR2GRAY) if len(
+                        img2.shape) == 3 else img
+                    img2_g = cv2.cvtColor(np.float32(img2), cv2.COLOR_BGR2GRAY) if len(
+                        img2.shape) == 3 else img2
+                    IQA_score = vifp(np.asarray(img_g).astype('uint8'), np.asarray(
+                        img2_g).astype('uint8'),  sigma_nsq=0.4)
                 except:
                     c -= 1
                     new_row = images_info_df.sample(n=1)
-                    for index, cur_row in new_row.iterrows():    
+                    for index, cur_row in new_row.iterrows():
                         image_path = cur_row['path']
-                        img = get_image_based_on_transformation(transformation_type, image_path)
+                        img = get_image_based_on_transformation(
+                            transformation_type, image_path)
                     continue
 
                 gc.collect()
@@ -177,17 +184,23 @@ def bootstrap(images_info_df: pd.DataFrame, num_sample_iter: int, sample_size: i
                     im = Image.fromarray(img2.astype('uint8'))
                     im.save(str(output_path))
                     annotation_filename = cur_row['id'] + ".xml"
-                    orig_anno_file =  Path(str(VOC_ROOT) +'/VOC2012/Annotations/'+annotation_filename)
-                    os.symlink(orig_anno_file, annotations_dir / annotation_filename)
+                    orig_anno_file = Path(
+                        str(VOC_ROOT) + '/VOC2012/Annotations/'+annotation_filename)
+                    os.symlink(orig_anno_file, annotations_dir /
+                               annotation_filename)
 
                     seg_filename = cur_row['id'] + ".png"
-                    orig_seg_class_file =  Path(str(VOC_ROOT) +'/VOC2012/SegmentationClass/'+seg_filename)
-                    orig_seg_obj_file =  Path(str(VOC_ROOT) +'/VOC2012/SegmentationObject/'+seg_filename)
-                    os.symlink(orig_seg_class_file, seg_class_dir / seg_filename)
+                    orig_seg_class_file = Path(
+                        str(VOC_ROOT) + '/VOC2012/SegmentationClass/'+seg_filename)
+                    orig_seg_obj_file = Path(
+                        str(VOC_ROOT) + '/VOC2012/SegmentationObject/'+seg_filename)
+                    os.symlink(orig_seg_class_file,
+                               seg_class_dir / seg_filename)
                     os.symlink(orig_seg_obj_file, seg_obj_dir / seg_filename)
                     break
-            progress_bar.set_postfix_str(f"Memory Perc: {psutil.virtual_memory().percent}")
-            
+            progress_bar.set_postfix_str(
+                f"Memory Perc: {psutil.virtual_memory().percent}")
+
             within_iter_count += 1
             progress_bar.update(n=1)
 

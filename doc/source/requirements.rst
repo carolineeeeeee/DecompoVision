@@ -20,24 +20,28 @@ Although not shown in the paper, we also conducted experiments with the transfor
 
 Estimated Thresholds for brightness
 -----------------------------------
-.. image:: images/brightess_thresholds.png
+.. image:: images/brightness_thresholds.png
   :alt: thresholds estimated for brightness
 
+
+Example Requirements
+--------------------
+table
 
 Proof Theorem 1
 ================
 Proof
 
-Example requirements
---------------------
-table
+Proof Theorem 2
+================
+Proof
 
 Procedure 1 for Complex Metrics
 ================================
 Procedure
 
-Example requirements
---------------------
+Example Requirements Complex Metrics
+------------------------------------
 table
 
 Proofs or Complex Metrics
