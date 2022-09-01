@@ -28,7 +28,7 @@ For such metrics :math:`M_\mathbf{V}`, we extend the *decomposable metric}* defi
   :alt: compound metric
 
 
-where :math:`M_\mathbf{V}^k` is a decomposable metric of the task math:`\mathbf{V}`, :math:`m^k_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a function that is monotonic with respect to every argument.
+where :math:`M_\mathbf{V}^k` is a decomposable metric of the task :math:`\mathbf{V}`, :math:`m^k_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a function that is monotonic with respect to every argument.
 
 
 
