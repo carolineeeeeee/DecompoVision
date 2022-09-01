@@ -1,5 +1,7 @@
 # Environment Setup for DecompoVision
 
+In this page, we explain how to setup the environment for Decompovision, and show how to use it.
+
 ## Setup
 Recommended python version: Python 3.10.4
 
@@ -27,12 +29,12 @@ Then, update the path to the directory `VOCdevkit` of the PASCAL VOC dataset as 
  `cp seg.txt VOCdevkit/VOC2012/ImageSets/Main/seg.txt`
    
 
-## Dependencies: detectron2
-[detectron2 by facebookresearch](https://github.com/facebookresearch/detectron2) is imported as a submodule under `checking`.
+4. Install the detectron2 (dependencies)
+[detectron2 by facebook research](https://github.com/facebookresearch/detectron2) is imported as a submodule under `checking`.
 
 There are some things you need to do before using it.
 
-1. Since there is no `requirements.txt` for detectron2, we list some dependencies here.
+a. Since there is no `requirements.txt` for detectron2, we list some dependencies here.
 
    ````bash
    pip install -r requirements.txt
@@ -42,10 +44,12 @@ There are some things you need to do before using it.
 
    ````
 
-2. Run `git submodule update --init` to download the detectron2 source code
-3. Run `python setup.py build develop`
-If it does not work, run instead: `PYTHON=$(which python)`  followed by ` sudo $PYTHON setup.py develop' 
-4. If you need to write any code that depends on this in this folder, make sure to add the following code at the top of your python script
+b. Run `git submodule update --init` to download the detectron2 source code
+
+c. Run `python setup.py build develop`
+If it does not work, run instead: `PYTHON=$(which python)`  followed by ` sudo $PYTHON setup.py develop'
+ 
+d. If you need to write any code that depends on this in this folder, make sure to add the following code at the top of your python script
    ```python
    import os
    import sys

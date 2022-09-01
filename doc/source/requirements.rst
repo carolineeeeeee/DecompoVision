@@ -34,13 +34,16 @@ Proof Theorem 2
 ================
 Proof
 
-Procedure 1 for Complex Metrics
+Procedure for Complex Metrics
 ================================
-Procedure
+.. image:: images/proc3.png
+  :alt: Procedure for Complex Metrics
 
 Example Requirements Complex Metrics
 ------------------------------------
-table
+.. image:: images/reqcompo.png
+  :alt: Example requirements with complex metrics
+
 
 Proofs or Complex Metrics
 ==========================

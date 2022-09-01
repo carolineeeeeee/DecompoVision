@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-DecompovisionReliability Analysis of Machine Vision Components Through Decomposition and Reuse.
-===============================================================================================
+Decompovision: Reliability Analysis of Machine Vision Components Through Decomposition and Reuse.
+================================================================================================
 
 
 
@@ -19,9 +19,4 @@ DecompovisionReliability Analysis of Machine Vision Components Through Decomposi
    source/envsetup
    source/evaluation
 
-Indices and tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`

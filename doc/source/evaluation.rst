@@ -2,9 +2,7 @@
 Additional Evaluation Results
 *****************************
 
-Introduction
-============
-In additon to the transformation frost shown in the paper, we also conducted an additional set of evaluation using the transformation brightness. 
+In additon to the image transformation adding artificial frost shown in the paper, we also conducted an additional set of evaluation using the image transformation changing brightness. 
 Because of page limit of the paper, we show them here.
 
 RQ1
@@ -16,13 +14,13 @@ As we can see in the image, our composed threshold is always the lowerbound thre
 
 RQ2
 ====
-RQ2 goes here
+.. image:: images/rq2b.png
+  :alt: RQ2 table with brightness
 
 RQ3
 ====
-RQ3 goes here
+.. image:: images/r3b.png
+  :alt: RQ3 table with brightness
 
 
-Conclusion
-----------
 Similar to frost shown in the paper, for transformation brightness, 1. we also observe that our composed threshold is a lowerbound; 2. we detected reliability gaps missed by existing benchmarks; 3. by reusing, we can save runtime for checking requirements satisfaction. 

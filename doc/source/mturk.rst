@@ -2,9 +2,7 @@
 Human Experiment
 ****************
 
-In this page, we provide details about our experiment with human participants to measure performance on object detection and instance segmentation.
-
-Implementations of these experiments can be found on our Github repository: TODO link
+In this page, we provide details about our experiment with human participants to measure performance on object detection and instance segmentation. Implementations of these experiments can be found on our Github repository: TODO link
 
 
 How It Works
@@ -47,11 +45,11 @@ If you were to build your own project, don't forget to change the urls in `patch
 
 
 Video Demonstration
-===================
+-------------------
 
 
 Localization
--------------
+============
 
 .. raw:: html
 
@@ -65,7 +63,7 @@ Localization
 
 
 Classification given Localization
-----------------------------------
+=================================
 
 
 .. raw:: html
@@ -77,10 +75,11 @@ Classification given Localization
     />
     Your browser does not support the video tag.
     </video>
+    
 
 Segmentation given Localization and Classification
----------------------------------------------------
-For this one, we use the Mturk template for instance segmentation, but provide the participants bounding boxes and class label of the object.
+==================================================
+For collecting human performance on instance segmentation, we use the Mturk template for instance segmentation, but provide the participants bounding boxes and class label of the object.
 
 TODO: add video
 
