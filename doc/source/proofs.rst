@@ -2,7 +2,7 @@
 Task Decomposition
 ******************
 
-In this page, we first provide the proof for the metric decomposition used in the paper, and we explain how to decompose complex metrics.
+In this page, we first provide the proof for the metric decomposition used in the paper, and we explain how to decompose compound evaluation metrics.
 
 
 
@@ -19,7 +19,7 @@ where :math:`M^{'}_\mathbf{V}` is a directly decomposable metric of the task :ma
 
 TODO add link to Proof for only 1 k
 
-Complex Metric Decompositon
+Compound Metric Decompositon
 ===========================
 Some metrics, such as mean Average *Precision* (*mAP*), are more complex and are not decomposable according to our decomposition definition. *mAP* is defined as an average of *AP* for each class label *c*; therefore, *mAP* can be represented as a function of the precision-recall curve, *PR*, that is directly decomposable. 
 For such metrics :math:`M_\mathbf{V}`, we extend the *decomposable metric}* definition into *compound decomposable* as follows:

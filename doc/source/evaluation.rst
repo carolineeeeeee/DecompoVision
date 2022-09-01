@@ -16,7 +16,7 @@ As we can see in the image, our composed threshold is always the lowerbound thre
 
 RQ2
 ====
-In the following table, we have for the transformation changing brightness, the comparison of reliability evaluation of object detection and instance segmentation MVCs with our checking method using the SoTa benchmark dataset PASCAL VOC [PASCALVOC]_.
+In the following table, we have for the transformation changing brightness, the comparison of reliability evaluation of object detection and instance segmentation MVCs with our checking method using the SoTa benchmark dataset PASCAL VOC-C [PASCALVOC-C]_.
 
 .. image:: images/rq2b.png
   :alt: RQ2 table with brightness
@@ -35,4 +35,4 @@ On average, reuse decreased runtime by :math:`86\%`, supporting our conclusion f
 
 
 
-..  [PASCALVOC] Benchmarking Robustness in Object Detection: Autonomous Driving when Winter is Coming `link <https://arxiv.org/abs/1907.07484>`_.
+..  [PASCALVOC-C] Benchmarking Robustness in Object Detection: Autonomous Driving when Winter is Coming `link <https://arxiv.org/abs/1907.07484>`_.
