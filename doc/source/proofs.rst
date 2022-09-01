@@ -5,10 +5,11 @@ Task Decomposition
 In this page, we first provide the proof for the metric decomposition used in the paper, and we explain how to decompose complex metrics.
 
 
+
+
 Metric Decomposition
 ====================
-
-Below, we remind the metric compositionality definition.
+Below, for a complex vision task, :math:`\mathbf{V}`, that can be represented as a sequential composition of  the subtasks, i.e., :math:`\mathbf{V} = \mathbf{v}_n \odot ...\mathbf{v}_2 \odot \mathbf{v}_1`, we remind the metric compositionality definition.
 
 .. image:: images/decompometric.png
   :alt: decomposable metric
