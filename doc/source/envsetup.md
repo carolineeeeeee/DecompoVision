@@ -5,7 +5,7 @@ In this page, we explain how to setup the environment for Decompovision, and sho
 ## Setup
 Recommended python version: Python 3.10.4
 
-1. First clone the github repository from here: TODO link
+1. First clone the github repository from the [anonymous link](https://anonymous.4open.science/r/object_detection-9EFA).
 
 2. Download PASCAL VOC data set from here: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit. Under **Development Kit** click on *training/validation data*. 
    

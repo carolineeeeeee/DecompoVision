@@ -76,7 +76,14 @@ Segmentation given Localization and Classification
 ==================================================
 For collecting human performance on instance segmentation, we use the Mturk template for instance segmentation, but provide the participants bounding boxes and class label of the object.
 
-TODO: add video
+.. raw:: html
+
+    <video width="600" controls controlsList="nodownload">
+    <source
+        src="https://detectionexp.s3.ca-central-1.amazonaws.com/segmentation.mp4"
+    />
+    Your browser does not support the video tag.
+    </video>
 
 
 Results
