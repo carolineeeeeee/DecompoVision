@@ -2,13 +2,14 @@
 DecompoVision Framework
 ***********************
 
-In this website, we provide the supplementary material for our ICSE’2023 paper. 
-Please find in the figure below an overview of our DecompoVision framework that we propose and an overview that is linked to the supplementary material sections. Find the implementation and instructions in :ref:`Download DecompoVision`.
+In this website, we provide the supplementary material for our ICSE’2023 submission. 
+The figure below gives an overview of our proposed DecompoVision framework.
 
 .. image:: images/decompoFram.png
   :alt: DecompoVision framework worflow
   
   
+Please find below an overview that is linked to the supplementary material sections. Find the implementation and instructions in :ref:`Download DecompoVision`.
 
 Overview
 --------

@@ -107,6 +107,11 @@ Download from [here](https://drive.google.com/drive/u/2/folders/1PtaaLHT9dKkS2nb
 
 This file will save results in pickle files. 
 
+Update line 26 to adjust sigma value for checking prediction-preservation requirements:
+```python
+SIGMA = 0.2
+```
+
 **Example**: In the directory `checking`, run
 `python eval_pascal_voc.py -t frost -th 0.9 -v D -r` will compute the evaluation metrics for object detection using images bootstrapped with frost under threshold 0.9. Since `-r` is specified, it will read existing MVC output file from `results_csv/frost_0.9` rather than running MVC prediction.
 
