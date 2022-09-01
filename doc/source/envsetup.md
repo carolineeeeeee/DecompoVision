@@ -1,4 +1,4 @@
-# Environment Setup for DecompoVision
+# Download DecompoVision
 
 In this page, we explain how to setup the environment for Decompovision, and show how to use it.
 
