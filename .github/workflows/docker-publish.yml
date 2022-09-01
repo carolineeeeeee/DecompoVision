@@ -17,7 +17,6 @@ env:
   # Use docker.io for Docker Hub if empty
   REGISTRY: registry.hub.docker.com
   # github.repository as <account>/<repo>
-  # IMAGE_NAME: ${{ github.repository }}  # HuakunShen/github-action-docker-publish-template
   IMAGE_NAME: "anonymoresearcher/reliability-object-detection"
 
 jobs:

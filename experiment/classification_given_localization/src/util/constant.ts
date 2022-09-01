@@ -819,14 +819,3 @@ export const classes: string[] = [
 classes.sort();
 
 export const qualificationCode = "1024";
-
-// carla, proposal, for marsha, not too long, 2-3 pages, before end of Summer
-// important: context, problem, existing work, goal of project, expected result
-
-// take CSC2559HF	2512
-
-/**
- * I am working with Caroline and Lina on 2 things.
- * The first one is developing a human performance experiement that runs on amazon mechanical turk.
- * Another thing is based on a previous paper, related to object detection and segmentation.
- */
