@@ -38,9 +38,8 @@ a. Since there is no `requirements.txt` for detectron2, we list some dependencie
 
    ````bash
    pip install -r requirements.txt
-   # install pytorch based on your OS and hardware
+   # install pytorch based on your OS and hardware 
    # here: https://pytorch.org/get-started/locally/
-   **```**
 
    ````
 
@@ -104,7 +103,7 @@ The file takes in 4 command line arguments:
 2. -v or --vision_task, specifying the complex vision task to use, select from ['D', 'I'], 'D' is for object detection and 'I' is for instance segmentation.
 3. -th or --threshold, the threshold used during bootstrap, this is used to locate the specific bootstrap images generated with this threshold.
 4. -r or --read_only. We provide the MVC output generated for our evaluation RQ2, setting this one to 1 will skip running MVC prediction and read existing MVC results form these files. 
-Download from here and put them in the directory `results_csv`: https://drive.google.com/drive/u/2/folders/1PtaaLHT9dKkS2nbNCT77gfCVXD3IwmTP
+Download from [here](https://drive.google.com/drive/u/2/folders/1PtaaLHT9dKkS2nbNCT77gfCVXD3IwmTP) and put them in the directory `results_csv`
 
 This file will save results in pickle files. 
 
@@ -121,6 +120,6 @@ First make `run_all.sh` executable by running `chmod 777 run_all.sh`, then run `
 After `run_all.sh` finishes, use `print_results.py` to print the reliability distances generated. 
 
 ## Using Docker
-See here for system requirements to run the docker: https://docs.docker.com/desktop/install/linux-install/#system-requirements
+You can directly use our decompovision with Docker, to do so run the docker pull command: `docker pull anonymoresearcher/reliability-object-detection`. Note that you need to have a nvidia GPU.
 
-You need to have a nvidia GPU
+If you do not have docker, see [here](https://docs.docker.com/desktop/install/linux-install/#system-requirements) for system requirements to run the docker.
