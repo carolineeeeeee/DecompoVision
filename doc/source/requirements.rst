@@ -2,8 +2,6 @@
 Reliability Requirements
 ************************
 
-Introduction
-============
 Details about estimation goes here
 
 Parameter Estimation

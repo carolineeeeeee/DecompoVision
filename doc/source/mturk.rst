@@ -1,11 +1,8 @@
 ****************
-Mturk Experiment
+Human Experiment
 ****************
 
-Introduction
-============
-
-Here we provide details about our experiment with human participants to measure performance on object detection and instance segmentation.
+In this page, we provide details about our experiment with human participants to measure performance on object detection and instance segmentation.
 
 Implementations of these experiments can be found on our Github repository: TODO link
 
@@ -90,5 +87,5 @@ TODO: add video
 
 Results
 ========
-We conducted object detection and instance segmentation experiments on Mechanical Turk for two transformations frost and brightness. 
-Results can be found in our github repository: TODO link
+We conducted object detection and instance segmentation experiments on Mechanical Turk for two image transformations adding artificial frost and changing brightness. 
+Results can be found in our github repository: TODO link.
