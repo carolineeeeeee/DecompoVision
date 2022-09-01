@@ -14,7 +14,7 @@ Below, for a complex vision task, :math:`\mathbf{V}`, that can be represented as
 .. image:: images/decompometric.png
   :alt: decomposable metric
   
-where :math:`M^{'}_\mathbf{V}` is a directly decomposable metric of the task :math:`\mathbf{V}`, :math:`m_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and $F$ is a monotonic function.
+where :math:`M^{'}_\mathbf{V}` is a directly decomposable metric of the task :math:`\mathbf{V}`, :math:`m_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a monotonic function.
 
 
 TODO add link to Proof for only 1 k
