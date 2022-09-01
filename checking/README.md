@@ -1,10 +1,11 @@
 # Environment Setup for DecompoVision
 
 ## Setup
-Recommended python version: Python 3.10.4
+Recommended python version: Python 3.10.4, and it also recomended to use a virtual environemnet (https://www.anaconda.com/)
 
 1. Download PASCAL VOC data set from here: http://host.robots.ox.ac.uk/pascal/VOC/voc2012/index.html#devkit. Under **Development Kit** click on *training/validation data*.
    
+
 The downloaded PASCAL VOC dataset, once unzip, should have the following structure
 ```
 > tree -L 3 datasets/VOCdevkit
@@ -46,7 +47,7 @@ There are some things you need to do before using it.
    ````
 
 2. Run `git submodule update --init` to download the detectron2 source code
-3. Run `python setup.py build develop`
+3. Enter the detectron2 folder and run `python setup.py build develop`
 4. If you need to write any code that depends on this in this folder, make sure to add the following code at the top of your python script
    ```python
    import os
@@ -107,7 +108,7 @@ Download from here and put them in the directory `results_csv`: https://drive.go
 This file will save results in pickle files. 
 
 **Example**: In the directory `checking`, run
-`python eval_pascal_voc.py -t frost -th 0.9 -v D -r 1` will compute the evaluation metrics for object detection using images bootstrapped with frost under threshold 0.9. Since `-r 1` is specified, it will read existing MVC output file from `results_csv/frost_0.9` rather than running MVC prediction.
+`python eval_pascal_voc.py -t frost -th 0.9 -v D -r`  will compute the evaluation metrics for object detection using images bootstrapped with frost under threshold 0.9. Since `-r` is specified, it will read existing MVC output file from `results_csv/frost_0.9` rather than running MVC prediction.
 
 ### 3. Run All Thresholds for Transformations frost and brightness
 File: `run_all.sh` and `checking/print_results.py`

@@ -1,21 +1,14 @@
 ****************
-Mturk Experiment
+Human Experiment
 ****************
 
-Introduction
-============
-
-Here we provide details about our experiment with human participants to measure performance on object detection and instance segmentation.
-
-Implementations of these experiments can be found on our Github repository: TODO link
+In this page, we provide details about our experiment with human participants to measure performance on object detection and instance segmentation. Implementations of these experiments can be found on our Github `repository <https://anonymous.4open.science/r/object_detection-9EFA/experiment/>`_ (anonymous link).
 
 
 How It Works
 ------------
-The mturk experiments are built with vue + vite.
-
-Mturk only allows user to upload a single html file. You could write everything into a single html file using vanilla javascript, but this quickly gets super complicated.
-
+The mturk experiments are built with vue + vite. 
+Mturk only allows user to upload a single html file. You could write everything into a single html file using vanilla javascript, but this quickly gets super complicated. 
 The file gets too long and hard to maintain. We then developed an easy way to build complex experiments with Vue (or any other modern single page application framework).
 
 
@@ -24,7 +17,6 @@ The file gets too long and hard to maintain. We then developed an easy way to bu
 But before copying the content to mturk, you need to upload all the dependencies (static assets such as css, js, images, etc) to AWS S3.
 
 AWS S3 serves as a CDN for the static assets, the `index.html` downloads them when web page loads.
-
 By default the generated `index.html` references the dependency files from local folder, you have to prefix the path with the S3 bucket url.
 
 For example, the original generated code is the following
@@ -41,20 +33,18 @@ You need to change it to
 
 
 Fortunately, we provide a patch script to update `href` automatically. It's called `patch-s3.sh`.
-
-We also provide a Makefile containing all the commands you will need from building, patching, to uploading.
-
+We also provide a Makefile containing all the commands you will need from building, patching, to uploading. 
 Simply run `make`, and everything will be done for you.
 
 If you were to build your own project, don't forget to change the urls in `patch-s3.sh` and `Makefile`.
 
 
 Video Demonstration
-===================
+-------------------
 
 
 Localization
--------------
+============
 
 .. raw:: html
 
@@ -68,7 +58,7 @@ Localization
 
 
 Classification given Localization
-----------------------------------
+=================================
 
 
 .. raw:: html
@@ -80,15 +70,24 @@ Classification given Localization
     />
     Your browser does not support the video tag.
     </video>
+    
 
 Segmentation given Localization and Classification
----------------------------------------------------
-For this one, we use the Mturk template for instance segmentation, but provide the participants bounding boxes and class label of the object.
+==================================================
+For collecting human performance on instance segmentation, we use the Mturk template for instance segmentation, but provide the participants bounding boxes and class label of the object.
 
-TODO: add video
+.. raw:: html
+
+    <video width="600" controls controlsList="nodownload">
+    <source
+        src="https://detectionexp.s3.ca-central-1.amazonaws.com/segmentation.mp4"
+    />
+    Your browser does not support the video tag.
+    </video>
 
 
 Results
-========
-We conducted object detection and instance segmentation experiments on Mechanical Turk for two transformations frost and brightness. 
-Results can be found in our github repository: TODO link
+-------
+
+We conducted object detection and instance segmentation experiments on Mechanical Turk for two image transformations adding artificial frost and changing brightness. 
+Results can be found `here <https://anonymous.4open.science/r/object_detection-9EFA/experiment/experiment_results/>`_ (anonymous link).
