@@ -2,7 +2,7 @@
 Task Decomposition
 ******************
 
-In this page, we first provide the proof for the metric decomposition used in the paper, and we explain how to decompose compound evaluation metrics.
+In this page, we first provide the proof for the metric decomposition used in the paper, and we explain how to decompose complex metrics.
 
 
 Metric Decomposition
@@ -18,7 +18,7 @@ where :math:`M^{'}_\mathbf{V}` is a directly decomposable metric of the task :ma
 Please find here (TODO:LINK) the proof that the object detection metric *AP* is decomposable.
 
 
-Compound Metric Decompositon
+Complex Metric Decompositon
 ===========================
 Some metrics, such as mean Average *Precision* (*mAP*), are more complex and are not decomposable according to our decomposition definition. *mAP* is defined as an average of *AP* for each class label *c*; therefore, *mAP* can be represented as a function of the precision-recall curve, *PR*, that is directly decomposable. 
 For such metrics :math:`M_\mathbf{V}`, we extend the *decomposable metric}* definition into *compound decomposable* as follows:
@@ -27,7 +27,7 @@ For such metrics :math:`M_\mathbf{V}`, we extend the *decomposable metric}* defi
   :alt: compound metric
 
 
-where :math:`M_\mathbf{V}^k` is a decomposable metric of the task :math:`\mathbf{V}`, :math:`m^k_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a function that is monotonic with respect to every argument.
+where :math:`M_\mathbf{V}^k` is a decomposable metric of the task math:`\mathbf{V}`, :math:`m^k_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a function that is monotonic with respect to every argument.
 
 Please find here (TODO:LINK) the proof that the object detection metric *mAP* is decomposable.
 
