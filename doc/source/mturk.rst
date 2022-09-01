@@ -2,7 +2,7 @@
 Human Experiment
 ****************
 
-In this page, we provide details about our experiment with human participants to measure performance on object detection and instance segmentation. Implementations of these experiments can be found on our Github repository: TODO link
+In this page, we provide details about our experiment with human participants to measure performance on object detection and instance segmentation. Implementations of these experiments can be found on our Github `repository <https://anonymous.4open.science/r/object_detection-9EFA/experiment/>`_ (anonymous link).
 
 
 How It Works
@@ -83,4 +83,4 @@ Results
 -------
 
 We conducted object detection and instance segmentation experiments on Mechanical Turk for two image transformations adding artificial frost and changing brightness. 
-Results can be found in our github repository: TODO link.
+Results can be found `here <https://anonymous.4open.science/r/object_detection-9EFA/experiment/experiment_results/>`_ (anonymous link).
