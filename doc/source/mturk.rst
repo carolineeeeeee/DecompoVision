@@ -7,10 +7,8 @@ In this page, we provide details about our experiment with human participants to
 
 How It Works
 ------------
-The mturk experiments are built with vue + vite.
-
-Mturk only allows user to upload a single html file. You could write everything into a single html file using vanilla javascript, but this quickly gets super complicated.
-
+The mturk experiments are built with vue + vite. 
+Mturk only allows user to upload a single html file. You could write everything into a single html file using vanilla javascript, but this quickly gets super complicated. 
 The file gets too long and hard to maintain. We then developed an easy way to build complex experiments with Vue (or any other modern single page application framework).
 
 
@@ -19,7 +17,6 @@ The file gets too long and hard to maintain. We then developed an easy way to bu
 But before copying the content to mturk, you need to upload all the dependencies (static assets such as css, js, images, etc) to AWS S3.
 
 AWS S3 serves as a CDN for the static assets, the `index.html` downloads them when web page loads.
-
 By default the generated `index.html` references the dependency files from local folder, you have to prefix the path with the S3 bucket url.
 
 For example, the original generated code is the following
@@ -36,9 +33,7 @@ You need to change it to
 
 
 Fortunately, we provide a patch script to update `href` automatically. It's called `patch-s3.sh`.
-
-We also provide a Makefile containing all the commands you will need from building, patching, to uploading.
-
+We also provide a Makefile containing all the commands you will need from building, patching, to uploading. 
 Simply run `make`, and everything will be done for you.
 
 If you were to build your own project, don't forget to change the urls in `patch-s3.sh` and `Makefile`.
@@ -85,6 +80,7 @@ TODO: add video
 
 
 Results
-========
+-------
+
 We conducted object detection and instance segmentation experiments on Mechanical Turk for two image transformations adding artificial frost and changing brightness. 
 Results can be found in our github repository: TODO link.
