@@ -275,7 +275,7 @@ def voc_eval_s_given_cl_mAP(final_output_df_csv_filename, p_gt, p_seg, p, cls, o
                     mask = Image.open(io.BytesIO(base64.b64decode(mask_file)))
                     mask = np.asarray(mask)[int(final_results['ymin'].iloc[d]-1):int(final_results['ymax'].iloc[d]), int(final_results['xmin'].iloc[d]-1):int(final_results['xmax'].iloc[d])] 
                     
-                    gt_mask_file = p_seg[d].split(' ')#'/w/10/users/boyue/VOCdevkit/VOC2012/SegmentationObject/'+image_id+ '.png' #TODO: make generic
+                    gt_mask_file = p_seg[d].split(' ')
                     gt_classes = p_gt[d].split(',')
                     gt_mask_file = gt_mask_file[gt_classes.index(cls)] 
                
