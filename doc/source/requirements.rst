@@ -30,16 +30,35 @@ Given a  c-task :math:`\mathbf{V} = \mathbf{v}_n \odot ...\mathbf{v}_2 \odot \ma
 
 **Theorem 2** states that if an MVC satisfies the composed c-task requirement :math:`\textit{req}'_\mathbf{V}`, then the MVC also satisfies the c-task requirement  :math:`\textit{req}_\mathbf{V}`.
 
-Please find the proofs for both theorems here (TODO:LINK).
+Proof of **Theorem 1**
+----------------------
+.. image:: ../images/th1-1.png
+  :width: 400
+  :alt: proof 1 part 1
+
+.. image:: ../images/th1-2.png
+  :width: 400
+  :alt: proof 1 part 2
+
+.. image:: ../images/th1-3.png
+  :width: 400
+  :alt: proof 1 part 3
+
+Proof of **Theorem 2**
+----------------------
+.. image:: ../images/th2.png
+  :width: 400
+  :alt: proof 2
 
 
 Procedure for Compound Decomposable Metrics
 ===========================================
 
 We provide the following Procedure 3 for generating the reliability requirements for
-the c-task :math:`\mathbf{V}` and its subtasks using the compound decomposable metrics :math:`M^k_\mathbf{V}` (see see :ref:`Task Decomposition`). Note that the difference with Procedure 1 are highlighted in purple.
+the c-task :math:`\mathbf{V}` and its subtasks using the compound decomposable metrics :math:`M^k_\mathbf{V}` (see see :ref:`Metric Decomposition`). Note that the difference with Procedure 1 are highlighted in purple.
 
 .. image:: images/proc3.png
+  :width: 600
   :alt: Procedure for Complex Metrics
 
 
@@ -49,4 +68,10 @@ See the table above for examples of generated *correctness-preservation* require
 .. image:: images/reqcompo.png
   :alt: Example requirements with complex metrics
 
+
+For the correctness of the requirement composition using the *compound decomposable metrics*, we prove the following theorem. 
+
+.. image:: ../images/th3.png
+  :width: 400
+  :alt: Procedure for Complex Metrics
 

@@ -52,6 +52,5 @@ For such metrics :math:`M_\mathbf{V}`, we extend the *decomposable metric* defin
 
 where :math:`M_\mathbf{V}^k` is a decomposable metric of the task :math:`\mathbf{V}`, :math:`m^k_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a function that is monotonic with respect to every argument.
 
-Please find here (TODO:LINK) the proof that the object detection metric *mAP* is decomposable.
-
+Now we show that *mAP* is decomposable. Given all class labels :math:`\mathbf{C}`$`, *mAP* is the average of each *AP* value of :math:`c\in \mathbf{C}`. Since *AP* for each :math:`c` is decomposable as we showed above, *mAP* is also decomposable: *mAP*:math:`_{\mathbf{V}} = mean(` *AP* :math:`^1, ...,` *AP* :math:`^{|\mathbf{C}|})`.
 
