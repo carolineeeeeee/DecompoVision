@@ -28,15 +28,8 @@ First, *AP* for a class :math:`c` is the AuC of the *PR*-curve. Therefore, by th
 
 Thus, *Precision*:math:`^{\delta}` and *Recall*:math:`^{\delta}` can be decomposed as follows:
 
-*Precision*:math:`^{\delta} =` :math:`\frac{|\{d|IoU_d \geq t_{IoU}\land c_d = c^* \land c_d = c\}|}{|\{d|c_d = c\}|} =`  
-:math:`\frac{|\{d|c_d = c^* \land IoU_d \geq t_{IoU} \land c_d = c\}|}{|\{d|IoU_d \geq t_{IoU}\land c_d = c\}|} \cdot \frac{|\{d|IoU_d \geq t_{IoU}\land c_d = c\}|}{|\{d|c_d = c\}|}`                            
-:math:`=` *Precision*:math:`_{L}^{\delta} \cdot` *Precision*:math:`_{C|L}^{\delta}`
-
-
-
-*Recall*:math:`^{\delta} =` :math:`\frac{|\{d|IoU_d \geq t_{IoU}\land c_d = c^* \land c^* = c\}|}{|\{d|c^* = c\}|} =` 
-:math:`\frac{|\{d|c_d = c^* \land IoU_d \geq t_{IoU}\land c^* = c\}|}{|\{d|IoU_d \geq t_{IoU}\land c^* = c\}|} \cdot \frac{|\{d|IoU_d \geq t_{IoU}\land c^* = c\}|}{|\{d|c^* = c\}|}`
-:math:`=` *Recall*:math:`_{L}^{\delta} \cdot` *Recall*:math:`_{C|L}^{\delta}`
+.. image:: images/precisionAP.png
+  :alt: decompose AP metric for detection
 
 
 Note that :math:`IoU_d \geq t_{IoU} \land c_d = c^*` is the condition for a detection :math:`d` to be a true positive. 
@@ -45,7 +38,7 @@ We can see that for *Precision*:math:`^{\delta}`, :math:`\frac{|\{d|IoU_d \geq t
 Similarly, *AP* for instance segmentation is decomposable because we can decompose *Precision*:math:`^{\delta}` and *Recall*:math:`^{\delta}`. For a segmented object :math:`s`, let :math:`IoU^{\textit{seg}}_s` be the max :math:`IoU` of the area enclosed by :math:`o_s` compared to all ground truth segmentation, :math:`IoU^{box}_s` be the max :math:`IoU` of :math:`b_s` compared to all tight bounding boxes around areas enclosed by ground truth segmentation. *Precision*:math:`^{\delta}` and *Recall*:math:`^{\delta}` can be decomposed as the following:
 
 .. image:: images/APseg.png
-  :alt: decompose AP metric
+  :alt: decompose AP metric for instance segmentation
 
 Following the decomposition of *Precision*:math:`^{\delta}` and *Recall* :math:`^{\delta}`, we can decompose *PR*-curves for instance segmentation, i.e., *PR*:math:`_I =` *PR*:math:`_L \cdot` *PR* :math:`_{C|L}\cdot` *PR* :math:`_{S|C,L}`. *AP* used for instance segmentation can also be decomposed following Eq.~\ref{decomposemetric}. 
 
