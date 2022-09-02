@@ -68,9 +68,16 @@ Therefore, *req*:math:`'_{\mathbf{V}}` is satisfied if all *req*:math:`_{\mathbf
 
 Theorem 2
 ~~~~~~~~~
-.. image:: images/th2.png
-  :width: 400
-  :alt: proof 2
+**Theorem 2**: *If the composed c-task requirement req*:math:`'_{\mathbf{V}}` *is satisfied, then so is the c-task requirement req*:math:`_\mathbf{V}`.
+
+**Proof.**
+Depending on the type of the requirement, *req*:math:`'_{\mathbf{V}}` can be :math:`cp'_{\mathbf{V}}` or :math:`pp'_{\mathbf{V}}`. We prove this theorem for both types. 
+
+For :math:`cp`, assume :math:`cp'_{\mathbf{V}}` is satisfied. We show the required condition :math:`M_V( f_\mathbf{V} , f_\mathbf{V}^*, P_{T_{X,t_\mathbf{V}}}) \geq M_V(f_\mathbf{V},f_\mathbf{V}^*,P_X)` in :math:`cp_{\mathbf{V}}` is satisfied. Without loss of generality, we assume :math:`M_\mathbf{V}` is not negatively correlated with :math:`M'_{\mathbf{V}}`. This suggests that if the value of :math:`M'_{\mathbf{V}}` increases, :math:`M_\mathbf{V}` increases. Therefore, :math:`F(M( f_\mathbf{V} , f_\mathbf{V}^*, P_{T_{X,t_\mathbf{V}}})) \geq F(M(f_\mathbf{V},f_\mathbf{V}^*,P_X))` which is :math:`M_V( f_\mathbf{V} , f_\mathbf{V}^*, P_{T_{X,t_\mathbf{V}}}) \geq M_V(f_\mathbf{V},f_\mathbf{V}^*,P_X)`. As a result, :math:`cp_\mathbf{V}` is satisfied.
+
+Similarly for :math:`pp`, if :math:`pp'_{\mathbf{V}}` is satisfied, we show the required condition :math:`M_V( f_\mathbf{V} , P_{T_{X,t_\mathbf{V}}}) \geq M_V(f_\mathbf{V}, P_{T_{X,t_\mathbf{V}}})` in :math:`pp_{\mathbf{V}}` is satisfied. Without loss of generality, we assume :math:`M_\mathbf{V}` is not negatively correlated with :math:`M'_{\mathbf{V}}`. This suggests that if the value of :math:`M'_{\mathbf{V}}` increases, :math:`M_\mathbf{V}` increases. Therefore, :math:`F(M( f_\mathbf{V} , P_{T_{X,t_\mathbf{V}}})) \geq F(M(f_\mathbf{V},P_{T_{X,t_\mathbf{V}}}))` which is :math:`M_V( f_\mathbf{V}, P_{T_{X,t_\mathbf{V}}}) \geq M_V(f_\mathbf{V},P_{T_{X,\epsilon}})`. As a result, :math:`pp_\mathbf{V}` is satisfied.
+
+Therefore, satisfying *req*:math:`'_{V}` implies satisfying *req*:math:`_\mathbf{V}`.
 
 
 Procedure for Compound Decomposable Metrics
