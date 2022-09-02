@@ -4,12 +4,12 @@
    contain the root `toctree` directive.
 
 Decompovision: Reliability Analysis of Machine Vision Components Through Decomposition and Reuse.
-================================================================================================
+=================================================================================================
 
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Table of contents:
 
    source/proofs
    source/mturk
@@ -21,7 +21,7 @@ Decompovision: Reliability Analysis of Machine Vision Components Through Decompo
 On this website, we provide the supplementary material for our ICSE’2023 submission. 
 The figure below gives an overview of our proposed DecompoVision framework.
 
-.. image:: images/decompoFram.png
+.. image:: source/images/decompoFram.png
   :alt: DecompoVision framework worflow
   
 
