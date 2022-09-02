@@ -32,21 +32,21 @@ Given a  c-task :math:`\mathbf{V} = \mathbf{v}_n \odot ...\mathbf{v}_2 \odot \ma
 
 Proof of **Theorem 1**
 ----------------------
-.. image:: ../images/th1-1.png
+.. image:: images/th1-1.png
   :width: 400
   :alt: proof 1 part 1
 
-.. image:: ../images/th1-2.png
+.. image:: images/th1-2.png
   :width: 400
   :alt: proof 1 part 2
 
-.. image:: ../images/th1-3.png
+.. image:: images/th1-3.png
   :width: 400
   :alt: proof 1 part 3
 
 Proof of **Theorem 2**
 ----------------------
-.. image:: ../images/th2.png
+.. image:: images/th2.png
   :width: 400
   :alt: proof 2
 
@@ -71,7 +71,7 @@ See the table above for examples of generated *correctness-preservation* require
 
 For the correctness of the requirement composition using the *compound decomposable metrics*, we prove the following theorem. 
 
-.. image:: ../images/th3.png
+.. image:: images/th3.png
   :width: 400
   :alt: Procedure for Complex Metrics
 
