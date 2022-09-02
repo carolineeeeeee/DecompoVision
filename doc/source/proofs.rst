@@ -1,6 +1,6 @@
-******************
+********************
 Metric Decomposition
-******************
+********************
 
 In this page, we first provide the proof for the metric decomposition used in the paper, and we define Compound Decomposable Metrics for more complex metrics.
 
@@ -9,8 +9,7 @@ Decomposable Metrics
 ====================
 Below, for a complex vision task, :math:`\mathbf{V}`, that can be represented as a sequential composition of  the subtasks, i.e., :math:`\mathbf{V} = \mathbf{v}_n \odot ...\mathbf{v}_2 \odot \mathbf{v}_1`, we remind the metric compositionality definition.
 
-.. image:: images/decompometric.png
-  :alt: decomposable metric
+:math:`M_\mathbf{V} = F(M^{'}_\mathbf{V}) \text{, where } M^{'}_\mathbf{V} = \prod_{i=1}^{N}{m_{\mathbf{v}_i}}`,
   
 where :math:`M^{'}_\mathbf{V}` is a directly decomposable metric of the task :math:`\mathbf{V}`, :math:`m_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a monotonic function.
 
@@ -43,14 +42,19 @@ Thus, *Precision*:math:`^{\delta}` and *Recall*:math:`^{\delta}` can be decompos
 Note that :math:`IoU_d \geq t_{IoU} \land c_d = c^*` is the condition for a detection :math:`d` to be a true positive. 
 We can see that for *Precision*:math:`^{\delta}`, :math:`\frac{|\{d|IoU_d \geq t_{IoU}\land c_d = c\}|}{|\{d|c_d = c\}|}` is the percentage of bounding boxes matched ground truth out of all output boxes of this class, which is precision for :math:`\mathbf{v}_L`; :math:`\frac{|\{d|c_d = c^* \land IoU_d \geq t_{IoU} \land c_d = c\}|}{|\{d|IoU_d \geq t_{IoU}\land c_d = c\}|}` is the percentage of correct labels out of all bounding boxes matched ground truth of this class, which is precision for :math:`\mathbf{v}_{C|L}`. Similarly for *Recall*:math:`^{\delta}`, :math:`\frac{|\{d|IoU_d \geq t_{IoU}\land c^* = c\}|}{|\{d|c^* = c\}|}` is recall for :math:`\mathbf{v}_L` and :math:`\frac{|\{d|IoU_d \geq t_{IoU}\land c^* = c\}|}{|\{d|c^* = c\}|}` is recall for :math:`\mathbf{v}_{C|L}`. Since both *Precision*:math:`^{\delta}` and *Recall*:math:`^{\delta}` are decomposable, each point on the *PR*-curve is decomposable, the *PR*-curve for each class :math:`c` can be decomposed into the two subtasks, i.e., *PR*:math:`_D =` *PR*:math:`_L \cdot \textit{PR}_{C|L}`. As a result, *AP* for object detection is decomposable following :ref:`Metric Decomposition`. 
 
+Similarly, *AP* for instance segmentation is decomposable because we can decompose *Precision*:math:`^{\delta}` and *Recall*:math:`^{\delta}`. For a segmented object :math:`s`, let :math:`IoU^{\textit{seg}}_s` be the max :math:`IoU` of the area enclosed by :math:`o_s` compared to all ground truth segmentation, :math:`IoU^{box}_s` be the max :math:`IoU` of :math:`b_s` compared to all tight bounding boxes around areas enclosed by ground truth segmentation. *Precision*:math:`^{\delta}` and *Recall*:math:`^{\delta}` can be decomposed as the following:
+
+.. image:: images/APseg.png
+  :alt: decompose AP metric
+
+Following the decomposition of *Precision*:math:`^{\delta}` and *Recall* :math:`^{\delta}`, we can decompose *PR*-curves for instance segmentation, i.e., *PR*:math:`_I =` *PR*:math:`_L \cdot` *PR* :math:`_{C|L}\cdot` *PR* :math:`_{S|C,L}`. *AP* used for instance segmentation can also be decomposed following Eq.~\ref{decomposemetric}. 
 
 Compound Decomposable Metrics
 =============================
 Some metrics, such as mean Average *Precision* (*mAP*), are more complex and are not decomposable according to our decomposition definition. *mAP* is defined as an average of *AP* for each class label *c*; therefore, *mAP* can be represented as a function of the precision-recall curve, *PR*, that is directly decomposable. 
 For such metrics :math:`M_\mathbf{V}`, we extend the *decomposable metric* definition into *compound decomposable* as follows:
 
-.. image:: images/compoundmetric.png
-  :alt: compound metric
+:math:`M_\mathbf{V} = F(M_\mathbf{V}^{1}, ..., M_\mathbf{V}^{K})\text{, where }M_\mathbf{V}^k = \prod_{i=1}^{N_k}`,
 
 
 where :math:`M_\mathbf{V}^k` is a decomposable metric of the task :math:`\mathbf{V}`, :math:`m^k_{\mathbf{v}_i}` is a metric of the *i*-th subtask, and :math:`F` is a function that is monotonic with respect to every argument.
