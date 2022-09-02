@@ -40,7 +40,7 @@ Similarly, *AP* for instance segmentation is decomposable because we can decompo
 .. image:: images/APseg.png
   :alt: decompose AP metric for instance segmentation
 
-Following the decomposition of *Precision*:math:`^{\delta}` and *Recall* :math:`^{\delta}`, we can decompose *PR*-curves for instance segmentation, i.e., *PR*:math:`_I =` *PR*:math:`_L \cdot` *PR* :math:`_{C|L}\cdot` *PR* :math:`_{S|C,L}`. *AP* used for instance segmentation can also be decomposed following Eq.~\ref{decomposemetric}. 
+Following the decomposition of *Precision*:math:`^{\delta}` and *Recall* :math:`^{\delta}`, we can decompose *PR*-curves for instance segmentation, i.e., *PR*:math:`_I =` *PR*:math:`_L \cdot` *PR* :math:`_{C|L}\cdot` *PR* :math:`_{S|C,L}`. *AP* used for instance segmentation can also be decomposed following :ref:`Metric Decomposition`. 
 
 Compound Decomposable Metrics
 =============================
