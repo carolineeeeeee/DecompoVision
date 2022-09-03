@@ -32,7 +32,7 @@ Procedure 1
 Procedure 2
 ===========
 
-.. image:: images/proc1.png
+.. image:: images/proc2.png
   :width: 600
   :alt: Procedure generating subtask requirements
 
