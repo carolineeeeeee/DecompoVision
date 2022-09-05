@@ -11,10 +11,10 @@ Decompovision: Reliability Analysis of Machine Vision Components Through Decompo
    :maxdepth: 1
    :caption: Table of contents:
 
+   source/envsetup
    source/proofs
    source/mturk
    source/requirements
-   source/envsetup
    source/evaluation
 
 
@@ -37,11 +37,11 @@ Note that the modularity of Decompovision allows us to reuse human performance d
 
 This website contains:
 
-1. Implementation of our framework and instructions for installing and running it: :ref:`Download DecompoVision`
-2. Definition of compound decomposable metrics and proofs for metrics decomposition: :ref:`Metric Decomposition`
-3. Proofs for correctness theorems: :ref:`Reliability Requirements`
-4. Additional evaluation results: :ref:`Additional Evaluation Results`
-5. Experiments to collect human performance data, including instructions and data used in the paper: :ref:`Human Experiment`
+1. Implementation of our framework and instructions for installing and running it: :ref:`Download DecompoVision`.
+2. Definition of compound decomposable metrics and proofs for metrics decomposition: :ref:`Metric Decomposition`.
+3. Experiments to collect human performance data, including instructions and data used in the paper: :ref:`Human Experiment`.
+4. Proofs for correctness theorems: :ref:`Reliability Requirements`.
+5. Additional evaluation results: :ref:`Additional Evaluation Results`.
 
 
 
