@@ -351,6 +351,12 @@ def estimate_curve_diff(rec_o, prec_o, rec_t, prec_t):
     mrec_t = np.concatenate(([0.0], rec_t, [1.0]))
     mpre_t = np.concatenate(([0.0], prec_t, [0.0]))
     
+    # update type for curve estimation
+    mrec_o = mrec_o.astype('float32')
+    mpre_o = mpre_o.astype('float32')
+    mrec_t = mrec_t.astype('float32')
+    mpre_t = mpre_t.astype('float32')
+    
     # sort them
     sorted_indices = np.argsort(mrec_o)
     mrec_o = mrec_o[sorted_indices]
