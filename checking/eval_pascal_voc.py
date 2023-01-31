@@ -351,12 +351,6 @@ def estimate_curve_diff(rec_o, prec_o, rec_t, prec_t):
     mrec_t = np.concatenate(([0.0], rec_t, [1.0]))
     mpre_t = np.concatenate(([0.0], prec_t, [0.0]))
     
-    # update type for curve estimation
-    mrec_o = mrec_o.astype('float32')
-    mpre_o = mpre_o.astype('float32')
-    mrec_t = mrec_t.astype('float32')
-    mpre_t = mpre_t.astype('float32')
-    
     # sort them
     sorted_indices = np.argsort(mrec_o)
     mrec_o = mrec_o[sorted_indices]
@@ -475,7 +469,10 @@ if __name__ == "__main__":
     "detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_R_101_C4_3x.yaml",
     "detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_R_101_DC5_3x.yaml",
     "detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_R_101_FPN_3x.yaml",
-    "detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x.yaml"]
+    "detectron2/configs/COCO-InstanceSegmentation/mask_rcnn_X_101_32x8d_FPN_3x.yaml",
+    "detectron2/configs/COCO-Detection/retinanet_R_50_FPN_1x.yaml",
+    'detectron2/configs/COCO-Detection/retinanet_R_50_FPN_3x.yaml',
+    'detectron2/configs/COCO-Detection/retinanet_R_101_FPN_3x.yaml']
     
     list_weights = ['model_weights/R50-C4_1x_MAXiter50000.pth',
     'model_weights/R50-DC5_1x_MAXiter50000.pth',
@@ -486,7 +483,10 @@ if __name__ == "__main__":
     'model_weights/R101-C4_3x_MAXiter50000.pth',
     'model_weights/R101-DC5_3x_MAXiter50000.pth',
     'model_weights/R101-FPN_3x_MAXiter50000.pth',
-    'model_weights/X101-FPN_3x_MAXiter50000.pth']
+    'model_weights/X101-FPN_3x_MAXiter50000.pth',
+    'model_weights/retinanet_R_50_FPN_1x.pth',
+    'model_weights/retinanet_R_50_FPN_3x.pth',
+    'model_weights/retinanet_R_101_FPN_3x.pth']
 
     assert len(list_config) == len(list_weights)
 

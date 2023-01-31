@@ -30,7 +30,9 @@ for t in transformations:
                     thlds = human_thld[v][req]
                     num_thlds = len(thlds.keys())
                     
-                    for model_index in range(10):
+                    for model_index in range(13):
+                        if vision_tasks == 'I' and model_index >= 10:
+                            continue
                         print('Model ' + str(model_index))
                         PR_results = []
                         mAP_results = []
