@@ -16,18 +16,10 @@ As we can see in the image, our composed threshold is always the lowerbound thre
 
 RQ2
 ===
-In the following table, we have for the transformation changing brightness, the comparison of reliability evaluation of object detection and instance segmentation MVCs with our checking method using the SoTa benchmark dataset PASCAL VOC-C [PASCALVOC-C]_.
+In the following table, we have for the transformation changing brightness, and for the class bus, the comparison of reliability evaluation of object detection and instance segmentation MVCs with our checking method using the SoTa benchmark dataset PASCAL VOC-C [PASCALVOC-C]_.
 
 .. image:: images/rq2b.png
   :alt: RQ2 table with brightness
-
-With the results highlighted in blue boxes, we can see that MVCs R50-C4-3x and R101-C4-3x have the same *AP* values but R101-C4-3x is more reliable to brightness than R50-C4-3x. Then, by checking reliability of subtasks, we can see that, highlighted with black boxes, although R50-C4-1x and R101-DC5-3x have similar *AP* values, R101-DC5-3x is more reliable for the subtask :math:`\mathbf{v}_{C|L}` and R50-C4-1x is more reliable for the subtask :math:`\mathbf{v}_L`. Also, as shown in red boxes, MVC R101-C4-3x has higher *AP* value than R50-C4-1x for instance segmentation, but it is less reliable against the transformation brightness. Additionally, for the object class bird, the reliability distance for :math:`pp_{\mathbf{V}_D}` and :math:`pp_{\mathbf{V}_I}` are all negative for all the MVCs. This suggests that these MVCs can preserve the prediction on original images better when there are more brightness adjustments in the images, meaning these MVCs are less reliable with less visual change in the images. These new reliability gaps identified with our checking method support our conclusion for RQ2.
-
-Similar to the transformation "frost", we can also detect reliability gaps missed by the PASCAL-VOC-C benchmark for the transformation "brightness". First of all, as highlighted in red in the table, for detecting the class "bird", the MVC R50-C4-1x is ranked first with PASCAL-VOC-C, however, ranked :math:`10^{th}` and :math:`5^{th}` for satisfying our requirements :math:`cp_{\mathbf{V}_D}` and :math:`pp_{\mathbf{V}_D}`. This means that after adjusting brightness, R50-C4-1x is neither correctness-preserving nor prediction-preserving, thus not safe to be deployed in safety-critical systems. Also, our framework is able to evaluate R50-C4-1x performance for segmenting "bird", ranking it at :math:`10^{th}` for satisfying correctness-preservation and :math:`7^{th}` for satisfying prediction-preservation.}
-
-Additionally, checking MVC performance on subtasks can provide more information about MVC reliability. As shown in red in the table, for detecting "person", R101-C4-3x and R101-DC5-3x have the same AP on the PASCAL-VOC-C benchmark images and very similar reliability distances for satisfying our requirements :math:`cp_{\mathbf{V}_D}` and :math:`pp_{\mathbf{V}_D}` for object detection. However, by checking their performance on the subtasks, we can see that, for correctness-preserving, R101-C4-3x is better at localizing "person" and R101-DC5-3x is better at classifying the localized "person"; for prediction-preserving, R101-C4-3x is, however, better at classifying the localized "person" and R101-DC5-3x is better at localizing. 
-
-These additional results also indicate that our framework can not only identify reliability gaps missed by SoTA benchmark but also provide more insights to MVC performance, thus supporting our conclusion for RQ2.
 
 RQ3
 ===
