@@ -18,7 +18,7 @@ Decompovision: Reliability Analysis of Machine Vision Components Through Decompo
    source/evaluation
 
 
-On this website, we provide the supplementary material for our ICSE’2023 submission. 
+On this website, we provide the supplementary material for our FSE’2023 submission. 
 The figure below gives an overview of our proposed DecompoVision framework.
 
 .. image:: source/images/decompoFram.png
