@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath('../checking'))
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Object Detection'
-copyright = '2022, Anonymous'
+copyright = '2023, Anonymous'
 author = 'Anonymous'
 
 # -- General configuration ---------------------------------------------------
